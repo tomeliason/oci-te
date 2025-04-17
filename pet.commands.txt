@@ -1,0 +1,11 @@
+[[Snippets]]
+  Description = "oci get namespace"
+  Output = ""
+  Tag = ["ocins"]
+  command = "oci os ns get"
+
+[[Snippets]]
+  Description = "oci tenancy"
+  Output = ""
+  Tag = []
+  command = "oci iam tenancy get --tenancy-id  \"$(oci iam compartment list --all --compartment-id-in-subtree true --access-level ACCESSIBLE --include-root --raw-output --query \"data[?contains(\\\"id\\\",'tenancy')].id | [0]\" )\" --raw-output --query \"data.description\""
